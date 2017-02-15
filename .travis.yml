@@ -3,6 +3,6 @@ services:
   - docker
 script:
   - docker build -t johnlinvc/danger-ci .
-  - ruby -e '%W{HAS_JOSH_K_SEAL_OF_APPROVAL TRAVIS_PULL_REQUEST TRAVIS_REPO_SLUG TRAVIS_PULL_REQUEST}.map{|k| [k,ENV[k]]}.each{|k,v| puts "#{k}=#{v}"}' > travis-ci.env
+  - ruby -e '%W{HAS_JOSH_K_SEAL_OF_APPROVAL TRAVIS_PULL_REQUEST TRAVIS_REPO_SLUG TRAVIS_PULL_REQUEST DANGER_GITHUB_API_TOKEN}.map{|k| [k,ENV[k]]}.each{|k,v| puts "#{k}=#{v}"}' > travis-ci.env
   - cat travis-ci.env
   - docker run --env-file travis-ci.env -v `pwd`:/app johnlinvc/danger-ci
