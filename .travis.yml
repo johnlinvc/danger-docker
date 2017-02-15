@@ -3,4 +3,5 @@ services:
   - docker
 script:
   - docker build -t johnlinvc/danger-ci .
-  - docker run -v `pwd`:/app johnlinvc/danger-ci
+  - env > .env
+  - docker run --env-file .env -v `pwd`:/app johnlinvc/danger-ci
