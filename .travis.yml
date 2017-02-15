@@ -1,0 +1,6 @@
+sudo: required
+services:
+  - docker
+script:
+  - docker build -t johnlinvc/danger-ci .
+  - docker -v `pwd`:/app run johnlinvc/danger-ci
