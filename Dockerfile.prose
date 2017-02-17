@@ -1,0 +1,13 @@
+FROM ruby:2.4-alpine
+RUN apk update && \
+    apk add git \
+    python
+ENV JENKINS_URL http://localhost
+RUN mkdir /app
+WORKDIR /app
+COPY ./Gemfile /app/
+COPY ./Gemfile.lock /app/
+RUN bundle install
+COPY ./get-pip.py /app/
+RUN python get-pip.py
+CMD ["bundle", "exec", "danger"]
