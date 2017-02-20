@@ -8,4 +8,4 @@ script:
   - docker build -t johnlinvc/danger-ci .
   - ./gen_env.rb > travis-ci.env
   - cat travis-ci.env
-  - docker run --env-file travis-ci.env -v `pwd`:/app johnlinvc/danger-ci
+  - docker run -v Gemfile.test:/app/Gemfile --env-file travis-ci.env -v `pwd`:/app johnlinvc/danger-ci
