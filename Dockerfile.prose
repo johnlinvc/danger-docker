@@ -4,7 +4,8 @@ RUN apk update && \
     python \
     g++ \
     make \
-    aspell
+    aspell \
+    aspell-en
 ENV JENKINS_URL http://localhost
 RUN mkdir /app
 WORKDIR /app
