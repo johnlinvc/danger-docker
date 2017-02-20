@@ -18,7 +18,7 @@ COPY ./requirements.txt /app/
 RUN pip-sync
 
 #Ruby stuffs
-COPY ./Gemfile /app/
+COPY ./Gemfile.docker /app/Gemfile
 COPY ./Gemfile.lock /app/
 RUN bundle install
 
