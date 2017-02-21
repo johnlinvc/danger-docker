@@ -5,6 +5,12 @@
 #    pip-compile --output-file requirements.txt requirements.in
 #
 click==6.7                # via proselint
+configparser==3.5.0       # via flake8
+enum34==1.1.6             # via flake8
+flake8==3.3.0
 future==0.16.0            # via proselint
+mccabe==0.6.1             # via flake8
 proselint==0.7.0
+pycodestyle==2.3.1        # via flake8
+pyflakes==1.5.0           # via flake8
 six==1.10.0               # via proselint

@@ -13,3 +13,6 @@ warn("Big PR") if git.lines_of_code > 500
 #fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 
 #changelog.check
+
+pep8.threshold = 10
+pep8.count_errors
