@@ -1,2 +1,3 @@
 proselint
 flake8
+yapf
