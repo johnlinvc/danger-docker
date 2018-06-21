@@ -7,15 +7,13 @@ RUN apk update && \
     aspell \
     aspell-en
 ENV JENKINS_URL http://localhost
-RUN mkdir /app
 WORKDIR /app
 
 #Python stuffs
 COPY ./get-pip.py /app/
 RUN python get-pip.py
-RUN pip install pip-tools
 COPY ./requirements.txt /app/
-RUN pip-sync
+RUN pip install -r requirements.txt
 
 #Ruby stuffs
 COPY ./Gemfile.docker /app/Gemfile
